@@ -1,0 +1,24 @@
+<nav class="site-nav">
+  <div class="nav-container">
+    <a class="nav-logo" href="{{ '/' | relative_url }}">
+      {{ site.title }}
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ '/projects/' | relative_url }}" {% if page.url contains '/projects' %}class="active"{% endif %}>Projects</a></li>
+      <li><a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a></li>
+      <li><a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact' %}class="active"{% endif %}>Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !expanded);
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+</script>

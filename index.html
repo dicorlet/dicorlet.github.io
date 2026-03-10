@@ -1,0 +1,101 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero -->
+<section class="site-hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">GIS Cartographer &amp; Spatial Analyst</span>
+    <h1 class="hero-title">
+      Mapping the <span>Natural World</span>
+    </h1>
+    <p class="hero-tagline">
+      Spatial analysis, cartography, and interactive mapping focused on hydrology,
+      watershed science, and environmental restoration.
+    </p>
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+  </div>
+</section>
+
+<!-- About Snippet -->
+<section class="section" style="background: var(--surface);">
+  <div class="about-snippet container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I'm a GIS specialist with a background in environmental science and watershed hydrology.
+        My work focuses on translating complex spatial datasets into clear, actionable maps and
+        analyses that support land management and conservation decisions.
+      </p>
+      <p>
+        I work primarily in QGIS, ArcGIS Pro, and GRASS GIS, with Python for scripting and
+        automation. I build interactive web maps with Leaflet.js to make spatial data accessible
+        to broader audiences.
+      </p>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-outline" style="margin-top: 0.5rem;">More About Me</a>
+    </div>
+    <div class="about-visual" style="background: var(--card); border-radius: var(--radius); height: 280px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 5rem; border: 1px solid rgba(92,122,62,0.2);">
+      🗺
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section" id="projects">
+  <div class="section-header">
+    <h2>Featured Projects</h2>
+    <p>A selection of GIS and cartography work in hydrology and environmental mapping.</p>
+  </div>
+
+  <div class="projects-grid">
+    {% assign featured = site.projects | where: "featured", true %}
+    {% for project in featured %}
+    <article class="project-card">
+      <div class="card-thumbnail">
+        {% if project.thumbnail %}
+          <img src="{{ project.thumbnail | relative_url }}" alt="{{ project.title }}">
+        {% else %}
+          🌿
+        {% endif %}
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{ project.title }}</h3>
+        <p class="card-desc">{{ project.description }}</p>
+        <div class="card-footer">
+          <div class="tag-list">
+            {% for tag in project.tags limit: 3 %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <a href="{{ project.url | relative_url }}" class="btn btn-outline" style="padding: 0.35rem 1rem; font-size: 0.85rem;">View →</a>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <div style="text-align: center; margin-top: 2.5rem;">
+    <a href="{{ '/projects/' | relative_url }}" class="btn btn-outline">All Projects</a>
+  </div>
+</section>
+
+<!-- Skills -->
+<section class="section skills-section">
+  <div class="section-header">
+    <h2>Tools &amp; Skills</h2>
+    <p>Software, languages, and technologies I use regularly.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-pill"><span class="skill-icon">🌐</span> QGIS</div>
+    <div class="skill-pill"><span class="skill-icon">🗺</span> ArcGIS Pro</div>
+    <div class="skill-pill"><span class="skill-icon">🐍</span> Python</div>
+    <div class="skill-pill"><span class="skill-icon">🌿</span> GRASS GIS</div>
+    <div class="skill-pill"><span class="skill-icon">🍃</span> Leaflet.js</div>
+    <div class="skill-pill"><span class="skill-icon">📡</span> Remote Sensing</div>
+    <div class="skill-pill"><span class="skill-icon">💧</span> Hydrology</div>
+    <div class="skill-pill"><span class="skill-icon">📊</span> Spatial Statistics</div>
+    <div class="skill-pill"><span class="skill-icon">🛰</span> LiDAR Processing</div>
+    <div class="skill-pill"><span class="skill-icon">📄</span> CartoDB / Mapbox</div>
+  </div>
+</section>

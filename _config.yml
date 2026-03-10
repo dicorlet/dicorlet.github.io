@@ -1,0 +1,39 @@
+title: "Your Name | GIS Portfolio"
+description: "GIS cartography, spatial analysis, and environmental mapping portfolio"
+author: "Your Name"
+
+# Update baseurl to "/repo-name" if NOT deploying to username.github.io
+baseurl: ""
+url: ""
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+
+# Build settings
+markdown: kramdown
+theme: null
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Sass
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

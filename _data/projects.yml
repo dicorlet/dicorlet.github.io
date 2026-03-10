@@ -1,0 +1,26 @@
+- title: "Stream Network Mapping"
+  slug: "stream-network-mapping"
+  description: "Automated stream network delineation using DEM analysis and flow accumulation algorithms in the San Luis Obispo region."
+  tags: ["QGIS", "Python", "Hydrology", "DEM"]
+  map_center: [35.28, -120.66]
+  map_zoom: 11
+  thumbnail: ""
+  featured: true
+
+- title: "Watershed Analysis"
+  slug: "watershed-analysis"
+  description: "Watershed boundary delineation and flow accumulation modeling for Chorro Creek drainage basin."
+  tags: ["ArcGIS", "GRASS GIS", "Watershed", "GIS"]
+  map_center: [35.35, -120.72]
+  map_zoom: 12
+  thumbnail: ""
+  featured: true
+
+- title: "Restoration Site Mapping"
+  slug: "restoration-site-mapping"
+  description: "Spatial inventory and suitability analysis for low-tech process-based restoration (LTPBR) sites along degraded stream corridors."
+  tags: ["QGIS", "Leaflet", "Conservation", "Remote Sensing"]
+  map_center: [35.32, -120.68]
+  map_zoom: 13
+  thumbnail: ""
+  featured: true

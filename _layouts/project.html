@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<article class="project-page">
+  <header class="project-hero">
+    <div class="project-hero-content">
+      <h1 class="project-title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="project-description">{{ page.description }}</p>
+      {% endif %}
+      {% if page.tags %}
+        <div class="tag-list">
+          {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if page.map_center %}
+  <section class="project-map-section">
+    <div id="project-map" class="leaflet-map"></div>
+  </section>
+  {% endif %}
+
+  <div class="project-body">
+    <div class="project-content">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+{% if page.map_center %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const center = {{ page.map_center | jsonify }};
+    const zoom = {{ page.map_zoom | default: 12 }};
+    {% if page.geojson %}
+    const geojson = {{ page.geojson | jsonify }};
+    {% else %}
+    const geojson = null;
+    {% endif %}
+    initMap(center, zoom, geojson);
+  });
+</script>
+{% endif %}
